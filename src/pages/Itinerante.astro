@@ -1,0 +1,72 @@
+---
+import Layout from '../layouts/Layout.astro';
+import SeccionDestacada from '../components/SeccionDestacada/SeccionDestacada.astro';
+import TarjetaPrecioSimple from '../components/TarjetaSimplePrecio/TarjetaSimplePrecio.astro';
+
+const heroImage = "/images/viajero.png";
+---
+<Layout title="Starlink - Itinerante">
+
+    <section
+            class="relative h-screen bg-cover bg-center"
+            style=`background-image: url(${heroImage})`
+    >
+        <div class="absolute inset-0 bg-black/40"></div>
+        <div class="relative z-10 flex flex-col justify-center items-center h-full text-center text-white p-4">
+            <h2 class="text-4xl md:text-6xl font-bold mb-4">ITINERANTE CON STARLINK</h2>
+            <p class="text-lg md:text-xl max-w-2xl">
+                Trabaje y disfrute en cualquier momento<br>Internet de alta velocidad desde $45.000/mes.
+            </p>
+            <a href="/Orden" class="mt-6 bg-white text-black px-6 py-3 rounded-lg font-semibold hover:bg-gray-200">
+                PEDIR AHORA
+            </a>
+        </div>
+    </section>
+
+    <section class="relative bg-black text-white py-16 text-center">
+        <h3 class="text-3xl font-bold mb-6 px-4">INTERNET DE ALTA VELOCIDAD EN CUALQUIER LUGAR</h3>
+        <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto px-6">
+            <TarjetaPrecioSimple
+                    title="ITINERANTE 50 GB"
+                    description="Ideal para viajes ocasionales"
+                    price="$45.000/mes"
+                    orderLink="/Orden"
+            />
+            <TarjetaPrecioSimple
+                    title="ITINERANTE ILIMITADO"
+                    description="Ideal para uso frecuente"
+                    price="$76.200/mes"
+                    orderLink="/Orden"
+            />
+        </div>
+    </section>
+
+    <SeccionDestacada
+            bgImage="/images/camping.jpg"
+            title="TRABAJE Y JUEGUE EN UBICACIONES REMOTAS"
+            description="Manténgase conectado en cualquier lugar, incluso en medio de la naturaleza."
+            contentPosition="center"
+    />
+
+    <section class="relative bg-black text-white py-16 text-center max-w-4xl mx-auto px-6">
+        <h3 class="text-3xl font-bold mb-4">PAGO POR USO</h3>
+        <p class="text-gray-400">
+            Pague solo cuando utilice Starlink. Pausa y reanude el servicio en cualquier momento con la app.
+        </p>
+    </section>
+
+    <SeccionDestacada
+            bgImage="/images/movimiento.png"
+            title="USE STARLINK EN MOVIMIENTO"
+            description="Ideal para vehículos y aventuras en carretera."
+            contentPosition="center"
+    />
+
+    <SeccionDestacada
+            bgImage="/images/clima.png"
+            title="RESISTENTE A LAS INCLEMENCIAS CLIMÁTICAS"
+            description="Diseñado para rendir incluso en condiciones extremas."
+            contentPosition="center"
+    />
+
+</Layout>

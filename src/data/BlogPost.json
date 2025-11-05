@@ -1,0 +1,26 @@
+[
+  {
+    "title": "¿Qué es Starlink?",
+    "slug": "tema-1"
+  },
+  {
+    "title": "¿Cómo funciona Starlink?",
+    "slug": "tema-2"
+  },
+  {
+    "title": "¿Qué pasa con el servicio de Starlink cuando llueve?",
+    "slug": "tema-3"
+  },
+  {
+    "title": "¿Cómo seguir el recorrido de los satélites de Starlink?",
+    "slug": "tema-4"
+  },
+  {
+    "title": "¿Cómo conocer la cobertura de Starlink?",
+    "slug": "tema-5"
+  },
+  {
+    "title": "¿Cuánto cuesta y cómo contratar Starlink?",
+    "slug": "tema-6"
+  }
+]

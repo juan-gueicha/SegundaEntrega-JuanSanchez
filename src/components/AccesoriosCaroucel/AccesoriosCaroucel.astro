@@ -1,0 +1,37 @@
+---
+const items = [
+    { img: "/images/1.png", title: "SOPORTE CON ADAPTADOR DE TUBO" },
+    { img: "/images/2.png", title: "SOPORTE DE PARED" },
+    { img: "/images/3.png", title: "SOPORTE GIRATORIO" },
+    { img: "/images/4.png", title: "ROUTER GEN 3" },
+]
+---
+<section class="bg-black text-white py-12">
+    <div class="max-w-7xl mx-auto px-6">
+
+        <h2 class="text-2xl font-bold mb-2">ACCESORIOS Y SOPORTES</h2>
+        <p class="text-gray-400 mb-8">Disponible en la tienda de Starlink después de su compra</p>
+
+        <div class="relative">
+            <div id="carousel" class="flex overflow-x-auto gap-6 scroll-smooth no-scrollbar">
+
+                {items.map(item => (
+                        <div class="min-w-[300px] flex-shrink-0">
+                            <img src={item.img} alt={item.title} class="w-full h-64 object-cover">
+                            <p class="mt-2 text-center font-semibold">{item.title}</p>
+                        </div>
+                ))}
+
+            </div>
+
+            <button onclick="document.getElementById('carousel').scrollBy({left: -320, behavior: 'smooth'})"
+                    class="absolute left-0 top-1/2 -translate-y-1/2 bg-gray-800/60 hover:bg-gray-700 p-3 rounded-full z-10">
+                ◀
+            </button>
+            <button onclick="document.getElementById('carousel').scrollBy({left: 320, behavior: 'smooth'})"
+                    class="absolute right-0 top-1/2 -translate-y-1/2 bg-gray-800/60 hover:bg-gray-700 p-3 rounded-full z-10">
+                ▶
+            </button>
+        </div>
+    </div>
+</section>

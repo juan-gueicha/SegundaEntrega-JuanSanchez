@@ -1,0 +1,85 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+import { getHomePageData } from '../data/principal.ts';
+import PasosConexion from '../components/ConexionPasos/ConexionPasos.astro';
+import TarjetaServicio from '../components/TarjetaServicio/TarjetaServicio.astro';
+import Destacado from '../components/Destacado/Destacado.astro';
+import SeccionDestacada from '../components/SeccionDestacada/SeccionDestacada.astro';
+import SeccionImagenTexto from '../components/TextoImagenSeccion/TextoImagenSeccion.astro';
+import CtaSection from '../components/CtaSection/CtaSection.astro';
+
+const { pageTitle, tarjetas } = getHomePageData();
+---
+<Layout title={pageTitle}>
+
+    <div
+            class="relative min-h-screen w-full bg-cover bg-center"
+            style="background-image: url('/images/ST2.png')"
+    >
+
+        <main class="flex-grow flex flex-col justify-center items-center text-center px-6 pt-32 md:pt-40">
+            <h2 class="text-4xl md:text-5xl font-black tracking-wide max-w-4xl mb-4">INTERNET DE ALTA VELOCIDAD
+                ALREDEDOR DEL MUNDO</h2>
+            <p class="max-w-lg mb-10 text-gray-200">Conéctese en casa o en cualquier lugar.</p>
+
+            <div class="flex flex-col md:flex-row gap-6">
+                {tarjetas.map(datos => (
+                        <TarjetaServicio
+                                title={datos.title}
+                                description={datos.description}
+                                orderLink={datos.orderLink}
+                                infoLink={datos.infoLink}
+                        />
+                ))}
+            </div>
+        </main>
+    </div>
+
+    <Destacado />
+
+    <SeccionDestacada
+            bgImage="../public/images/casa.png"
+            title="CONECTIVIDAD DONDE MENOS LO ESPERA"
+            description="Hacer streaming y videollamadas, jugar en línea, trabajar de forma remota y mucho más ahora es posible incluso en los lugares más remotos gracias al sistema de internet más avanzado del mundo."
+            buttonText="MÁS INFORMACIÓN"
+            buttonLink="/Itinerante"
+            contentPosition="start"
+    />
+
+    <SeccionImagenTexto
+            imageSrc="/public/images/imagenantena.jpg"
+            imageAlt="Antena de Starlink"
+            title="Conéctese en pocos minutos"
+            imagePosition="left"
+    >
+        <PasosConexion />
+
+    </SeccionImagenTexto>
+
+    <SeccionImagenTexto
+            imageSrc="/public/images/n1.jpg"
+            imageAlt="Persona con tablet"
+            title="Planes de servicio flexibles"
+            imagePosition="right"
+
+    >
+        <p class="mb-6 text-gray-300">
+            Starlink ofrece planes de servicio flexibles en todas partes.
+            Pausa y reanuda tu servicio en cualquier momento.
+        </p>
+
+
+
+    </SeccionImagenTexto>
+
+    <SeccionDestacada
+            bgImage="/public/images/space.png"
+            title="DISEÑADO POR SPACEX"
+            description=" SpaceX, proveedor líder mundial de servicios de lanzamiento y el único con un cohete reutilizable de clase orbital, tiene una enorme experiencia tanto en naves espaciales como en operaciones en órbita"
+            contentPosition="start"
+    />
+
+    <CtaSection />
+
+</Layout>

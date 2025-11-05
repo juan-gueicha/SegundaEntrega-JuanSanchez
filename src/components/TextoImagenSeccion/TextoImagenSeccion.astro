@@ -1,0 +1,23 @@
+---
+interface Props {
+    imageSrc: string;
+    imageAlt: string;
+    title: string;
+    imagePosition: 'left' | 'right';
+}
+const { imageSrc, imageAlt, title, imagePosition } = Astro.props;
+---
+<section class="py-16 container mx-auto px-6 text-white">
+    <div class="grid md:grid-cols-2 gap-16 items-center">
+
+        <div class:list={["flex justify-center", { "md:order-last": imagePosition === 'right' }]}>
+            <img src={imageSrc} alt={imageAlt} class="max-w-full h-auto">
+        </div>
+
+        <div>
+            <h2 class="text-3xl font-bold uppercase mb-8">{title}</h2>
+            <slot />
+        </div>
+
+    </div>
+</section>

@@ -1,0 +1,98 @@
+---
+import Layout from '../layouts/Layout.astro';
+import SeccionDestacada from '../components/SeccionDestacada/SeccionDestacada.astro';
+import TextoImagenSeccion from '../components/TextoImagenSeccion/TextoImagenSeccion.astro';
+
+
+import TarjetaPrecio from '../components/PrecioTarjeta/PrecioTarjeta.astro';
+import PasosInstalacion from '../components/InstalacionPasos/InstalacionPasos.astro';
+import CarouselAccesorios from '../components/AccesoriosCaroucel/AccesoriosCaroucel.astro';
+
+
+const heroImage = "/images/Starlink.jpg";
+---
+<Layout title="Starlink - Residencial">
+
+    <section
+            class="relative h-screen bg-cover bg-center"
+            style=`background-image: url(${heroImage})`
+    >
+        <div class="absolute inset-0 bg-black/40"></div>
+        <div class="relative h-full flex flex-col justify-center items-center text-center text-white p-4">
+            <h1 class="text-4xl md:text-5xl font-extrabold uppercase tracking-wider">
+                Starlink para el Hogar
+            </h1>
+            <p class="mt-4 max-w-md text-lg">
+                Internet de alta velocidad estable, donde sea que viva. $35,000/mes, con un costo por el hardware de $200,000.
+            </p>
+            <a href="/Orden" class="mt-6 bg-white text-black px-6 py-3 rounded-lg font-semibold hover:bg-gray-200">
+                PEDIR AHORA
+            </a>
+        </div>
+    </section>
+
+    <section class="relative bg-black text-white py-20 px-4">
+        <div class="relative container mx-auto text-center">
+            <h2 class="text-3xl md:text-4xl font-extrabold tracking-wider mb-12">
+                VEA PELÍCULAS, HAGA VIDEOLLAMADAS, JUEGUE Y MÁS
+            </h2>
+            <div class="flex flex-col md:flex-row justify-center gap-8">
+                <TarjetaPrecio
+                        title="RESIDENCIAL LITE"
+                        description="Ideal para hogares pequeños y con poco uso"
+                        price="$35.000"
+                        features="Datos básicos ilimitados<br>Impuestos/tarifas incluidos en el precio en toda Latam"
+                />
+                <TarjetaPrecio
+                        title="RESIDENCIAL"
+                        description="Ideal para hogares"
+                        price="$47.000"
+                        features="Datos ilimitados<br>Impuestos/tarifas incluidos en el precio en toda Latam"
+                />
+            </div>
+        </div>
+    </section>
+
+    <SeccionDestacada
+            bgImage="/images/mini.png"
+            title="STARLINK MINI"
+            description="Compacto, potente y fácil de transportar"
+            minHeight="h-screen"
+    />
+
+    <SeccionDestacada
+            bgImage="/images/remoto.png"
+            title="INTERNET DE ALTA VELOCIDAD"
+            description="Hasta en las ubicaciones más remotas"
+            contentPosition="start"
+    />
+
+    <TextoImagenSeccion
+            imageSrc="/images/imagenantena.jpg"
+            imageAlt="Antena de Starlink"
+            title="DISEÑADO PARA QUE LOS PROPIOS USUARIOS LO INSTALEN"
+            imagePosition="left"
+    >
+        <PasosInstalacion />
+    </TextoImagenSeccion>
+
+    <SeccionDestacada
+            bgImage="/images/nieve.png"
+            title="RESISTENTE A LAS INCLEMENCIAS CLIMÁTICAS"
+            contentPosition="start"
+    />
+
+    <TextoImagenSeccion
+            imageSrc="/images/hogar.png"
+            imageAlt="Persona con tablet"
+            title="Datos ilimitados disponibles"
+            imagePosition="right"
+    >
+        <p class="mb-6">
+            Los planes de servicio residencial de Starlink incluyen opciones de datos ilimitados de alta velocidad para su hogar.
+        </p>
+    </TextoImagenSeccion>
+
+    <CarouselAccesorios />
+
+</Layout>

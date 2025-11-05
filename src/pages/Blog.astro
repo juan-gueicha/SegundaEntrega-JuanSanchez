@@ -1,0 +1,33 @@
+---
+import Layout from '../layouts/Layout.astro';
+import BlogCard from '../components/CardBlog/CardBlog.astro';
+import posts from '../data/BlogPost.json';
+
+const bgImage = "/public/images/fondo-definitivo.png";
+---
+<Layout title="Starlink - Blog">
+
+    <section
+            class="relative min-h-screen bg-cover bg-center flex items-center py-24"
+            style=`background-image: url('${bgImage}')`
+    >
+        <main class="flex-1 flex items-center justify-center">
+            <div class="bg-gray-100 text-gray-900 rounded-2xl shadow-xl p-10 max-w-5xl w-full mx-4">
+
+                <h2 class="text-3xl font-bold text-center mb-8">INFORMACIÓN EXTRA</h2>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+
+                    {posts.map(post => (
+                            <BlogCard
+                                    title={post.title}
+                                    slug={post.slug}
+                            />
+                    ))}
+
+                </div>
+            </div>
+        </main>
+    </section>
+
+</Layout>

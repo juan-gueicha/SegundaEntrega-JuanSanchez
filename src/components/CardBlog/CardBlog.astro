@@ -1,0 +1,15 @@
+---
+interface Props {
+    title: string;
+    slug: string;
+}
+const { title, slug } = Astro.props;
+
+const postUrl = `/blog/${slug}`;
+---
+<div class="bg-white rounded-xl shadow p-6 text-center">
+    <h3 class="text-lg font-semibold mb-4 h-16 flex items-center justify-center">{title}</h3>
+    <a href={postUrl} class="inline-block bg-black text-white px-4 py-2 rounded-lg hover:bg-gray-800">
+        Más información
+    </a>
+</div>
