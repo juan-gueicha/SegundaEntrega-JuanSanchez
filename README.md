@@ -1,8 +1,15 @@
-Inicio proyecto astro
+# Inicio proyecto astro
+
+
 npm create astro@latest
 
-Instalacion TailwindCSS
+
+# Instalacion TailwindCSS
+
 npm install tailwindcss
 
-Arranque del proyecto
+
+# Arranque del proyecto
+
 npm run dev
+
